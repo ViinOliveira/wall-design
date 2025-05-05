@@ -279,6 +279,62 @@ nav {
   font-size: 1.1rem;
 }
 
+/* Esconde botão de menu no desktop */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Estilos para mobile */
+@media (max-width: 768px) {
+  .header-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "logo toggle"
+      "menu menu"
+      "btn btn";
+    row-gap: 10px;
+  }
+
+  .logo {
+    grid-area: logo;
+  }
+
+  .menu-toggle {
+    display: block;
+    grid-area: toggle;
+    justify-self: end;
+  }
+
+  nav {
+    grid-area: menu;
+    width: 100%;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    display: none;
+    background-color: #0f2e20;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .btn-container {
+    grid-area: btn;
+    justify-content: center;
+  }
+}
+
+
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;

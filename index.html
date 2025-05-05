@@ -14,6 +14,9 @@
       <div class="logo">
         <img src="img/logotipo.png" alt="Wall & Design Logo" />
       </div>
+
+      <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+
       <nav>
         <ul class="menu">
           <li><a href="#inicio">Início</a></li>
@@ -23,6 +26,7 @@
           <li><a href="#login">Login</a></li>
         </ul>
       </nav>
+
       <div class="btn-container">
         <a href="#contato" class="btn-orcamento">Solicitar Orçamento</a>
         <div class="language-switcher">
@@ -50,6 +54,7 @@
     </div>
   </section>
 
+  <!-- Galeria de Ambientes -->
   <section class="ambientes">
     <div class="ambiente">
       <img src="img/escritorio1.jpg" alt="Escritório moderno">
@@ -69,6 +74,13 @@
   <a href="https://wa.me/seunumero" class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
     <img src="img/whatsapp.png" alt="WhatsApp Icon">
   </a>
+
+  <!-- Script para menu responsivo -->
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.menu').classList.toggle('show');
+    });
+  </script>
 
   <script src="js/script.js"></script>
 </body>
