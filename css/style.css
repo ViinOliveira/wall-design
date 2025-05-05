@@ -18,19 +18,21 @@ header {
 
 .header-container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 70px;
-  justify-content: space-between;
-  flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
   box-sizing: border-box;
   width: 100%;
 }
 
 .logo {
-  flex: 1;
-  margin-right: 30px;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo img {
@@ -66,6 +68,10 @@ nav {
 
 .menu li a:hover {
   color: #d4af37;
+}
+
+.menu, .btn-container {
+  flex: 1;
 }
 
 .btn-container {
