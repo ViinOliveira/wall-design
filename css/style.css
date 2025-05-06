@@ -92,16 +92,23 @@ nav {
   outline-offset: 3px;
 }
 
+.btn-language-group {
+  display: flex;
+  align-items: center;
+  gap: 16px; 
+}
+
 .language-switcher {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   align-items: center;
-  justify-content: center;
 }
 
 .flag-icon {
-  width: 24px;
-  height: auto;
+  width: 22px;       
+  height: 15px;      
+  border-radius: 2px; 
+  object-fit: cover;
   transition: transform 0.2s;
   cursor: pointer;
 }
@@ -260,44 +267,67 @@ nav {
 }
 /* ===== RESPONSIVO ===== */
 
+.desktop-only {
+  display: flex;
+}
+
+.mobile-only {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .header-container {
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    height: auto;
-    padding: 15px;
+    justify-content: space-between;
+    padding: 10px 16px;
   }
 
   .menu-toggle {
     display: block;
+    font-size: 28px;
+    background-color: #f5f5f5;
+    color: #0f2e20;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: background-color 0.3s;
+  }
+
+  .menu-toggle:hover {
+    background-color: #e0e0e0;
   }
 
   nav {
     position: absolute;
-    top: 70px;
+    top: 100%; /* em vez de top: 70px */
     left: 0;
     width: 100%;
     background-color: #0f2e20;
     flex-direction: column;
     align-items: center;
+    padding: 0;
     display: none;
-    padding-bottom: 15px;
+    z-index: 999;
   }
 
   nav.show {
     display: flex;
+    padding: 20px 0 30px;
   }
 
   .menu {
     flex-direction: column;
-    gap: 15px;
-    align-items: center;
+    gap: 16px;
     width: 100%;
+    align-items: center;
   }
 
-  .btn-container {
-    display: none; /* Esconde botão fora do menu em mobile */
+  .btn-container,
+  .desktop-only {
+    display: none;
   }
 
   .menu li:last-child {
@@ -305,21 +335,25 @@ nav {
   }
 
   .menu .btn-orcamento {
+    margin-top: 16px;
+  }
+
+  .mobile-only {
+    display: flex;
+    justify-content: center;
     margin-top: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .header-container {
-    padding: 10px;
+    gap: 12px;
+    flex-direction: row;
   }
 
-  .menu-toggle {
-    font-size: 24px;
+  .language-switcher.mobile-only {
+    margin-top: 6px;
+    padding-top: 0;
+    padding-bottom: 10px;
   }
 
-  .logo img {
-    max-width: 90px;
+  .hero {
+    margin-top: 70px;
   }
 }
 
