@@ -15,6 +15,7 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   }
   
   .header-container {
@@ -57,12 +58,14 @@ body {
     color: #f5f5f5;
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.95rem;
-    transition: color 0.3s;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s;
   }
   
   .menu li a:hover {
-    color: #d4af37;
+    background-color: #d4af37;
   }
   
   .btn-container {
@@ -200,6 +203,30 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   }
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #0f2e20;
+  color: #aaa;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 60px;
+  border-top: 1px solid #1a4732;
+}
+
+.footer-content a {
+  color: #d4af37;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color 0.3s;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
   
 .menu-toggle {
     display: none;
@@ -214,135 +241,128 @@ body {
     display: none;
   }
   
-  @media (max-width: 768px) {
-    .header-container {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 16px;
-    }
-  
-    .menu-toggle {
-      display: block;
-      font-size: 28px;
-      background-color: #f5f5f5;
-      color: #0f2e20;
-      border: none;
-      padding: 6px 10px;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-right: 20px;
-      transition: background-color 0.3s;
-    }
-  
-    .menu-toggle:hover {
-      background-color: #e0e0e0;
-    }
-  
-    nav {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      width: 100%;
-      background-color: #0f2e20;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      padding: 0;
-      z-index: 999;
-      opacity: 0;
-      transform: translateY(-20px);
-      pointer-events: none;
-      transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-    
-    nav.show {
-      display: flex;
-      padding: 20px 0 30px;
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-    
-    nav {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      width: 100%;
-      background-color: #0f2e20;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      padding: 0;
-      z-index: 999;
-      opacity: 0;
-      transform: translateY(-20px);
-      pointer-events: none;
-      transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-    
-    nav.show {
-      display: flex;
-      padding: 40px 0 30px;
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-      justify-content: center;      /* Centraliza conteúdo verticalmente */
-    }
-    
-    .menu {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      padding: 0;
-      box-sizing: border-box;
-      transform: translateX(-10px); /* <-- move 5px para a esquerda */
-    }
-  
-  
-    .menu li:last-child {
-      margin-top: 10px;
-    }
-  
-    .menu .btn-orcamento {
-      margin-top: 16px;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-  
-    .btn-orcamento:hover {
-      transform: translateY(-2px);
-    }
-  
-    .btn-container,
-    .desktop-only {
-      display: none;
-    }
-  
-  .menu .btn-orcamento,
-  .language-switcher.mobile-only {
+  /* ===== RESPONSIVO GERAL: CELULARES E TABLETS ===== */
+@media (max-width: 1024px) {
+  .hero {
+    margin-top: 70px;
+    height: 80vh;
+  }
+
+  .hero-content h2 {
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+  }
+
+  .hero-content p {
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+  }
+
+  .header-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    background-color: #f5f5f5;
+    color: #0f2e20;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: background-color 0.3s;
+  }
+
+  .menu-toggle:hover {
+    background-color: #e0e0e0;
+  }
+
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #0f2e20;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  nav.show {
+    display: flex;
+    padding: 30px 0;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    justify-content: center;
+  }
+
+  .menu {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 0;
+    box-sizing: border-box;
+    transform: translateX(-10px);
+  }
+
+  .menu li:last-child {
+    margin-top: 10px;
+  }
+
+  .menu .btn-orcamento {
+    margin-top: 16px;
+    transition: background-color 0.3s, transform 0.2s;
     align-self: center;
   }
-  
-    .mobile-only {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-      gap: 12px;
-      flex-direction: row;
-    }
-  
-    .language-switcher.mobile-only {
-      margin-top: 6px;
-      padding-top: 0;
-      padding-bottom: 10px;
-    }
-  
-    .hero {
-      margin-top: 70px; /* compensa a altura fixa do header */
-    }
+
+  .btn-orcamento:hover {
+    transform: translateY(-2px);
   }
+
+  .btn-container,
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 12px;
+    flex-direction: row;
+  }
+
+  .language-switcher.mobile-only {
+    margin-top: 6px;
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
+
+  .footer {
+    font-size: 0.85rem;
+    padding: 24px 16px;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-content a {
+    margin: 0 6px;
+  }
+}
